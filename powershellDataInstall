@@ -1,0 +1,8 @@
+$url = "https://github.com/Crpytonize/CrypticiRblx/raw/refs/heads/main/Release.zip"
+$desktop = [System.Environment]::GetFolderPath("Desktop")
+$zipPath = "$desktop\Release.zip"
+$extractPath = "$desktop\Release"
+
+Invoke-WebRequest -Uri $url -OutFile $zipPath
+Expand-Archive -Path $zipPath -DestinationPath $extractPath -Force
+Remove-Item $zipPath
